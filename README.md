@@ -2,11 +2,12 @@
 
 > SJTU ACM班 2021级 程序设计课程大作业
 
+[![GitHub top language](https://img.shields.io/github/languages/top/ACM-Programming-2021/Bookstore-2021)](https://www.cplusplus.com/)
 [![GitHub](https://img.shields.io/github/license/ACM-Programming-2021/Bookstore-2021)](https://www.gnu.org/licenses/gpl-3.0.html)
-
 [![GitHub repo size](https://img.shields.io/github/repo-size/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/archive/refs/heads/main.zip)
 
-
+[![Latest tag](https://img.shields.io/github/v/tag/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/tags)
+[![Last commit](https://img.shields.io/github/last-commit/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/commits/)
 
 ## 目录
 
