@@ -1,4 +1,4 @@
-# 📚 图书管理系统 📚
+# 📚 书店管理系统 📚
 
 > SJTU ACM班 2021级 程序设计课程大作业
 
@@ -25,16 +25,12 @@
     * [Github 仓库管理](#github-仓库管理)
     * [代码风格](#代码风格)
   * [😈 业务需求](#-业务需求)
+    * [基本要求](#基本要求)
     * [交互方式](#交互方式)
     * [用户系统](#用户系统)
     * [图书系统](#图书系统)
     * [性能需求](#性能需求)
   * [💎 Bonus](#-bonus)
-    * [满减套餐](#满减套餐)
-    * [工业黑盒](#工业黑盒)
-    * [自动化](#自动化)
-    * [安全第一](#安全第一)
-    * [屠龙神技](#屠龙神技)
 
 
 
@@ -44,7 +40,7 @@
 
 ## 🎈 简介
 
-- 实现一个用 C++ 语言编写的图书管理系统，用于向店家和顾客提供图书基本信息检索与购买相关服务
+- 实现一个用 C++ 语言编写的书店管理系统，用于向店家和顾客提供图书基本信息检索与购买相关服务
 - 本项目目标如下
   - 培养学生工程开发的能力（开发文档的编写与程序的封装等）
   - 培养学生的代码管理能力（Github 的使用），拥有良好的代码规范意识
@@ -53,7 +49,7 @@
 - 关于本仓库
   - 本仓库为模板仓库，你可以点击上方绿色的 `Use this template` 按钮复制一份属于你的仓库用于完成作业。你应该自定义 `README.md` 内容（其中如 ![GitHub top language](https://img.shields.io/github/languages/top/ACM-Programming-2021/Bookstore-2021) 这样的 Shield，将链接中的 `/:user/:repo` 改成你的信息即可，详见 [Shields.IO](https://shields.io/)）
   - 助教提供的块状链表 DLL 及使用方式见仓库中 `bin` 和 `src` 文件夹中现成的示例代码
-  - 关于本仓库有任何问题欢迎联系助教
+  - 关于本仓库有任何问题欢迎联系助教，也可以直接 Pull request
 
 
 
@@ -74,6 +70,7 @@
 - Online Judge 提交方式为提交 `Git` 格式的代码，内容为形如 `https://github.com/username/repo.git` 的链接
   - 注意：由于网络原因可能会导致评测机 Clone 仓库失败。仓库内容过大（如将解压后的数据文件或 Build 内容一并放入仓库）导致的问题后果自负。
   - 提示：可以使用 Github 仓库加速通道链接提交作业，例如 Chrome 插件 [GitHub加速](https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg)
+- 评测数据量（账号和图书数量）不会超过  $10^5$  数量级
 
 
 
@@ -171,25 +168,70 @@
 
 ### 😈 业务需求
 
+#### 基本要求
+
+- 设计并实现一个书店管理系统，最终交接物为开发文档、工程源代码及可执行文件
+- 关于程序有以下要求
+  - 编程语言限制：软件主体完全使用 C++ 编写
+  - 程序首次运行时自主执行所需的初始化操作
+  - 程序启动后，根据输入数据执行对应操作，直至读入 EOF 或根据相关指令要求终止运行
+
 #### 交互方式
 
-- CLI stdin stdout
-- 文件存储
-- Invalid
+- 支持使用命令行（Windows CMD 或 Linux Terminal）进行操作，输入数据以换行符或回车符为分隔为若干指令。本说明文档中以弱化的正则语法说明指令文法。指令文法相关说明如下，未说明信息见下文
+
+  - `[x]` 表示一串特定限制的字符串
+
+  - `(a | b | c)` 表示此处仅能出现 `a`, `b`, `c` 中其一
+
+  - `(x)*` 表示此处可以出现若干次 `x`
+
+  - `(x)?` 表示此处可以出现零次或一次 `x`
+
+  - ```css
+    # 账户相关操作
+    su [User-ID] [Password]
+    logout
+    register [User-ID] [Password] [User-Name]
+    passwd [User-ID] ([Old-Password])? [New-Password]
+    useradd [User-ID] [Password] [Priority] [User-Name]
+    delete [User-ID]
+    
+    # 图书相关操作
+    select [ISBN]
+    show (-ISBN=[ISBN] | -name=[Name] | -author=[Author] | -keyword=[Keyword])
+    buy [ISBN] [Quantity]
+    modify (-ISBN=[ISBN] | -name=[Book-Name] | -author=[Author] | -keyword=[Keyword] | -price=[Price])*
+    import [quantity] [total_cost]
+    
+    # 日志相关操作
+    show (finance[Time])?
+    report finance
+    report employee
+    log
+    ```
+  - 以下为指令具体说明
 
 #### 用户系统
 
+- todo
+
 #### 图书系统
+
+- todo
 
 #### 其他功能
 
-- 初始化
-- report
+- todo
 
 #### 性能需求
 
-- 不能都放内存
-- 不能 FADB
+- 考虑到应用场景下用户和图书数量较大，故禁止将数据主题存储于内存，应实时读写文件数据
+  - 禁止类似 File As Database 的实现方式
+
+
+
+
 
 
 
@@ -201,7 +243,7 @@
 >
 > 除 Task 16 外，所有任务均无正确性测试，由学生展示后助教主观评分。
 >
-> Task 4~13 若展示成果极为优秀，可视情况给分溢出该任务满分，但 Bonus 部分总分一定不会超过 10 分。
+> Task 4~14 若展示成果极为优秀，可视情况给分溢出该任务满分。
 
 #### 满减套餐
 
@@ -251,8 +293,8 @@
 #### 自动化
 
 - 尝试使用 Github Action 进行检查与发布，在以下功能中实现一个得 `[3]` 分，实现两个得 `[4]` 分
-- **Task 7.** 使用 Github Action 自动进行 Lint 检查
-- **Task 8.** 使用 Github Action 自动 Release 多平台可执行文件
+  - **Task 7.** 使用 Github Action 自动进行 Lint 检查
+  - **Task 8.** 使用 Github Action 自动 Release 多平台可执行文件
 
 #### 安全第一
 
@@ -263,8 +305,8 @@
 
 #### 屠龙神技
 
-- **Task 12.**  `[8]`  语法高亮
-- **Task 13.**  `[8]`  Tab 补全
+- **Task 12.**  `[8]`  语法高亮（Posix 平台）
+- **Task 13.**  `[8]`  Tab 补全（Posix 平台）
 
 - **Task 14.**  `[10]`  高并发块链
   - 支持对于特殊数据的多线程读取
