@@ -1,16 +1,19 @@
 #pragma region HEADER
 
-// Ull class implements a unrolled linked list.
+// Ull class implements an unrolled linked list.
 // It's easy to write and use a ULL.
 //
 // Some parameters are defined in the form of
 // macro in the following, but modifying these
-// parameters is invalid. In other words, you
+// parameters is INVALID. In other words, you
 // SHOULD NOT modify any content of this header
 // file unless you know what you are doing.
-//
-// Modified by PaperL on 2021/11.
-// Used for teaching in the ACM Class.
+
+/*
+ * 这个库的封装和码风其实很一般, 并没有多少值得借鉴的意义.
+ * 本库由 PaperL 于 2021/11 修改,
+ * 仅用于程序设计课程教学用途.
+ */
 
 #define ULL_EXPORT
 #ifdef ULL_EXPORT
@@ -37,12 +40,15 @@
 #define BLOCK_SPLIT_LEFT 45
 #define BLOCK_MERGE_THRESHOLD 10
 
-//#define PaperL_Debug
+//#define PPL_DEBUG
 
 #pragma endregion
 
 class UllNode {
-// Stores your data
+// Stores key-value data
+// The data type of key is `int` and the data type
+// of value is `char[64]`, but the constructor only
+// accepts `std::string` as value.
 public:
     int offset;
     char str[64];
@@ -101,7 +107,7 @@ public:
 
     int deleteNode(const UllNode &node);
 
-#ifdef PaperL_Debug
+#ifdef PPL_DEBUG
     void debugPrint();
 #endif
 
