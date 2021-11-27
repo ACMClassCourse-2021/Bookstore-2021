@@ -68,13 +68,13 @@
 
 ### 🛎 评测方式
 
-- 公开的评测数据见本仓库根目录下 `Data.rar`
+- 公开的评测数据见本仓库下 `asset/Data.rar`
   - 注意：每个 `testcase` 为最小评测数据单元。即测试同一 `testcase` 的多个输入文件过程中，对于每个输入文件，都会以其为输入运行学生程序，完成后关闭程序，再以下一个输入文件运行学生程序，但过程中不会清除学生程序运行生成的数据文件。而每个 `testcase` 测试结束后会清除所有学生程序生成的文件，再运行下一个 `testcase`。
 - Online Judge（以下简称 OJ）提交方式为提交 `cpp` 或 `Git` 格式的代码
   - 若提交格式为 `Git` ，则提交内容应为形如 `https://github.com/username/repo.git` 的链接
     - 编译评测方式详见 OJ 首页说明。注意：编译生成的可执行文件名应为 `code`；OJ 使用沙盒评测文件读写
     - 由于网络原因可能会导致评测机 Clone 仓库失败。仓库内容过大（如将解压后的数据文件或 Build 内容一并放入仓库）导致的问题后果自负。（Tip：可以使用 Github 仓库加速通道链接提交作业，例如 Chrome 插件 [GitHub加速](https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg)）
-
+- 本地评测可用脚本评测，参考 `asset/localJudge.py`
 - 评测数据量（账户和图书数量）不会超过  `10^5`  数量级
 
 
