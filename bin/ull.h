@@ -35,10 +35,10 @@
 #include <string>
 #include <cstring>
 
-#define BLOCK_SIZE 100
-#define BLOCK_SPLIT_THRESHOLD 90
-#define BLOCK_SPLIT_LEFT 45
-#define BLOCK_MERGE_THRESHOLD 10
+#define BLOCK_SIZE 173
+#define BLOCK_SPLIT_THRESHOLD 170
+#define BLOCK_SPLIT_LEFT 85
+#define BLOCK_MERGE_THRESHOLD 20
 
 //#define PPL_DEBUG
 
