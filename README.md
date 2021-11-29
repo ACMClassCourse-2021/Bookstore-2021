@@ -2,10 +2,8 @@
 
 > SJTU ACM班 2021级 程序设计课程大作业
 
-[![GitHub top language](https://img.shields.io/github/languages/top/ACM-Programming-2021/Bookstore-2021)](https://www.cplusplus.com/)
 [![GitHub](https://img.shields.io/github/license/ACM-Programming-2021/Bookstore-2021)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub repo size](https://img.shields.io/github/repo-size/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/archive/refs/heads/main.zip)
-
 [![Latest tag](https://img.shields.io/github/v/tag/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/tags)
 [![Last commit](https://img.shields.io/github/last-commit/ACM-Programming-2021/Bookstore-2021)](https://github.com/ACM-Programming-2021/Bookstore-2021/commits/)
 
@@ -97,7 +95,7 @@
 ### ⏱ 中期检查
 
 - 助教将在固定时间节点检查学生的完成进度，具体时间详见 [检查时间表](#-检查时间表)
-  - **📢 请所有学生填写问卷：[Repo 地址收集](https://www.wjx.top/vj/t6qa8FZ.aspx)**
+  - **📢 请所有学生填写问卷：[Bookstore-2021 学生信息统计](https://www.wjx.top/vj/t6qa8FZ.aspx)**
 - **中期检查将以仓库的 Tag 为准**，助教将检查最新 Tag 对应的 Commit 的内容是否符合该阶段要求
 - 如遇困难请**提前**联系助教
 
@@ -429,7 +427,7 @@
 
 #### 性能需求
 
-- 考虑到应用场景下用户和图书数量较大，故**禁止将数据主体存储于内存**，应实时读写文件数据
+- 考虑到应用场景下用户和图书数量较大，故**禁止将主体数据存储于内存**，应实时读写文件数据（可以简单理解为 `exit` 指令的效果等价于强行终止程序）
   - 禁止类似 File As Database 的实现方式 *（如果你不知道这是什么意思，那么也不用担心自己会触犯该条要求）*
 
 
