@@ -360,7 +360,7 @@
 - **指令说明**
   - **检索图书指令**
     - `{1}` `show (-ISBN=[ISBN] | -name="[Book-Name]" | -author="[Author]" | -keyword="[Keyword]")?`
-    - 以 `[ISBN]` 字典升序依次输出满足要求的图书信息，每个图书信息输出格式为 `[ISBN]\t[Book-Name]\t[Author]\t[Keyword]\t[Price]\t[库存数量]\n`，其中 `[keyword]` 中关键词顺序为升序
+    - 以 `[ISBN]` 字典升序依次输出满足要求的图书信息，每个图书信息输出格式为 `[ISBN]\t[Book-Name]\t[Author]\t[Keyword]\t[Price]\t[库存数量]\n`，其中 `[keyword]` 中关键词顺序为输入时的顺序
       - 无满足要求的图书时输出空行
       - 无附加参数时，所有图书均满足要求
       - 附加参数内容为空则操作失败
